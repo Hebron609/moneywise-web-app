@@ -16,7 +16,7 @@ A dedicated Next.js web application replacing the Moodle course for **MoneyWise 
      - **Activity 03 & 03b**: HTML5 captioned video player (`Spot_The_Fake_Message.mp4` with `Spot_The_Fake_Message.en.vtt`) & expandable transcript.
      - **Activity 04**: Interactive 5 simulated SMS messages with diagnosis inputs & official model analysis reveal.
      - **Activity 05**: Interactive discussion forum with thread creation, replies, and pinned facilitator messages.
-     - **Activity 06a**: Collaborative Group Savings Plan Wiki with multi-member revision history (Addo Mensah & Millicent Osei).
+     - **Activity 06a**: Collaborative Group Savings Plan Wiki with multi-member revision history (Addo Mensah & Millicent Kumado).
      - **Activity 06b**: Final Group Savings Plan assignment submission evaluated on the 4-point rubric.
      - **Activity 07**: 10-Question Saving & Scams Practice Quiz with immediate feedback and explanations.
      - **Activity 08**: 5-Question Scam Mastery Check (Pass requirement: 5/5 to achieve Objective O3, with retry loop).

@@ -616,7 +616,7 @@ export const DEMO_FORUM_POSTS = [
       },
       {
         id: "rep-2",
-        authorName: "Millicent Osei",
+        authorName: "Millicent Kumado",
         authorRole: "STUDENT",
         date: "2026-10-19 15:45",
         content: "Adding to Addo's point: you can also verify your account balance yourself via USSD without clicking links. If your wallet actually works, then the SMS was 100% fake!",
@@ -627,7 +627,7 @@ export const DEMO_FORUM_POSTS = [
 
 export const DEMO_WIKI_CONTENT = {
   groupName: "Demo Group A (SHS Learners)",
-  lastEditedBy: "Millicent Osei & Addo Mensah",
+  lastEditedBy: "Millicent Kumado & Addo Mensah",
   lastEditedAt: "2026-10-20 06:34",
   goal: "Purchase of Term 2 Science Textbooks & Geometry Set",
   targetAmount: "GHS 120.00",
@@ -643,7 +643,7 @@ export const DEMO_WIKI_CONTENT = {
       change: "Created initial draft: agreed on 6-week textbook goal and arithmetic.",
     },
     {
-      author: "Millicent Osei",
+      author: "Millicent Kumado",
       date: "2026-10-20 06:34",
       change: "Added safe storage comparison and risk mitigation plan for unexpected costs.",
     },

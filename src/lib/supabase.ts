@@ -84,7 +84,7 @@ export const DEFAULT_USERS: StoredUser[] = [
   {
     id: "usr-student-2",
     email: "millicent@moneywise.org",
-    fullName: "Millicent Osei",
+    fullName: "Millicent Kumado",
     role: "STUDENT",
     createdAt: "2026-10-18T08:30:00Z",
   },
@@ -126,7 +126,18 @@ function setLocal<T>(key: string, value: T): void {
 
 // User Management
 export function getAllUsers(): StoredUser[] {
-  return getLocal<StoredUser[]>("users", DEFAULT_USERS);
+  const users = getLocal<StoredUser[]>("users", DEFAULT_USERS);
+  let updated = false;
+  users.forEach((u) => {
+    if (u.id === "usr-student-2" && u.fullName !== "Millicent Kumado") {
+      u.fullName = "Millicent Kumado";
+      updated = true;
+    }
+  });
+  if (updated) {
+    setLocal("users", users);
+  }
+  return users;
 }
 
 export function saveUser(user: StoredUser): void {
@@ -237,7 +248,7 @@ export function getForumPosts(): StoredForumPost[] {
         },
         {
           id: "rep-2",
-          authorName: "Millicent Osei",
+          authorName: "Millicent Kumado",
           authorRole: "STUDENT",
           date: "2026-10-19 15:45",
           content:
