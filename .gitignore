@@ -1,0 +1,11 @@
+.next
+node_modules
+.DS_Store
+.env*
+!.env.example
+*.log
+tsconfig.tsbuildinfo
+.vercel
+# Local browser test output
+playwright-report/
+test-results/
