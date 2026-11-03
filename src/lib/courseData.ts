@@ -72,8 +72,8 @@ export const COURSE_METADATA = {
   ],
   contextNote: "Use fictional figures only. No real payment or account opening is part of this course. Download the offline reading pack during school access time.",
   facilitatorContact: {
-    name: "Augustine (Facilitator) / Israel (LMS Lead)",
-    email: "facilitator@moneywise.org",
+    name: "Charity Adjei (Course Lecturer) / Israel (LMS Lead)",
+    email: "lecturer@moneywise.org",
     responseTarget: "Within 24 hours during supervised sessions",
   },
 };
@@ -601,7 +601,7 @@ Sources: Cyber Security Authority, https://www.csa.gov.gh/mobile_money_fraud.php
 export const DEMO_FORUM_POSTS = [
   {
     id: "post-1",
-    authorName: "Augustine K. (Course Facilitator)",
+    authorName: "Charity Adjei (Course Lecturer)",
     authorRole: "LECTURER",
     date: "2026-10-18 09:00",
     topic: "Welcome to Week 3: Pause Before You Pay Discussion",

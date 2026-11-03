@@ -47,6 +47,34 @@ function CoursePageContent() {
       user = DEFAULT_USERS[0]; // Addo Mensah
     }
 
+    // Auto-migrate legacy cached user names from browser localStorage
+    if (
+      user.id === "usr-lecturer-1" ||
+      user.email === "lecturer@moneywise.org" ||
+      user.fullName.includes("Augustine")
+    ) {
+      user = {
+        ...user,
+        fullName: "Charity Adjei (Course Lecturer)",
+      };
+      localStorage.setItem("mw_current_user", JSON.stringify(user));
+      if (typeof window !== "undefined") {
+        document.cookie = "user_role=LECTURER; path=/; SameSite=Lax";
+      }
+    }
+
+    if (
+      user.id === "usr-student-2" ||
+      user.email === "millicent@moneywise.org" ||
+      user.fullName.includes("Osei")
+    ) {
+      user = {
+        ...user,
+        fullName: "Millicent Kumado",
+      };
+      localStorage.setItem("mw_current_user", JSON.stringify(user));
+    }
+
     setCurrentUser(user);
 
     // Check if staff mode requested via URL or user role

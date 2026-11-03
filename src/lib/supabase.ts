@@ -91,7 +91,7 @@ export const DEFAULT_USERS: StoredUser[] = [
   {
     id: "usr-lecturer-1",
     email: "lecturer@moneywise.org",
-    fullName: "Augustine K. (Facilitator)",
+    fullName: "Charity Adjei (Course Lecturer)",
     role: "LECTURER",
     createdAt: "2026-10-17T12:00:00Z",
   },
@@ -131,6 +131,10 @@ export function getAllUsers(): StoredUser[] {
   users.forEach((u) => {
     if (u.id === "usr-student-2" && u.fullName !== "Millicent Kumado") {
       u.fullName = "Millicent Kumado";
+      updated = true;
+    }
+    if (u.id === "usr-lecturer-1" && u.fullName !== "Charity Adjei (Course Lecturer)") {
+      u.fullName = "Charity Adjei (Course Lecturer)";
       updated = true;
     }
   });
@@ -227,10 +231,10 @@ export function recordQuizAttempt(attempt: Omit<StoredQuizAttempt, "id" | "date"
 
 // Forum Posts Management
 export function getForumPosts(): StoredForumPost[] {
-  return getLocal<StoredForumPost[]>("forum_posts", [
+  const posts = getLocal<StoredForumPost[]>("forum_posts", [
     {
       id: "post-1",
-      authorName: "Augustine K. (Course Facilitator)",
+      authorName: "Charity Adjei (Course Lecturer)",
       authorRole: "LECTURER",
       date: "2026-10-18 09:00",
       topic: "Discuss: pause before you pay",
@@ -257,6 +261,29 @@ export function getForumPosts(): StoredForumPost[] {
       ],
     },
   ]);
+
+  // Auto-migrate legacy cached author names in browser storage
+  let updated = false;
+  posts.forEach((p) => {
+    if (p.authorName.includes("Augustine")) {
+      p.authorName = "Charity Adjei (Course Lecturer)";
+      updated = true;
+    }
+    p.replies?.forEach((r) => {
+      if (r.authorName.includes("Augustine")) {
+        r.authorName = "Charity Adjei (Course Lecturer)";
+        updated = true;
+      }
+      if (r.authorName.includes("Osei")) {
+        r.authorName = "Millicent Kumado";
+        updated = true;
+      }
+    });
+  });
+  if (updated) {
+    setLocal("forum_posts", posts);
+  }
+  return posts;
 }
 
 export function addForumPost(post: {
@@ -300,7 +327,7 @@ export function addForumReply(
 
 // Assignment Submissions Management
 export function getSubmissions(): StoredSubmission[] {
-  return getLocal<StoredSubmission[]>("submissions", [
+  const subs = getLocal<StoredSubmission[]>("submissions", [
     {
       id: "sub-group-1",
       userId: "usr-student-1",
@@ -313,7 +340,7 @@ export function getSubmissions(): StoredSubmission[] {
       grade: 4,
       maxGrade: 4,
       feedback: "Excellent plan! Fictional amounts are realistic, arithmetic is exact, and risk management avoids debt.",
-      gradedBy: "Augustine K. (Facilitator)",
+      gradedBy: "Charity Adjei (Course Lecturer)",
       submittedAt: "2026-10-20 06:44",
     },
     {
@@ -327,10 +354,23 @@ export function getSubmissions(): StoredSubmission[] {
       grade: 1,
       maxGrade: 1,
       feedback: "Complete and thoughtful application of safe saving principles.",
-      gradedBy: "Augustine K. (Facilitator)",
+      gradedBy: "Charity Adjei (Course Lecturer)",
       submittedAt: "2026-10-20 06:45",
     },
   ]);
+
+  // Auto-migrate legacy cached grader names in browser storage
+  let updated = false;
+  subs.forEach((s) => {
+    if (s.gradedBy && s.gradedBy.includes("Augustine")) {
+      s.gradedBy = "Charity Adjei (Course Lecturer)";
+      updated = true;
+    }
+  });
+  if (updated) {
+    setLocal("submissions", subs);
+  }
+  return subs;
 }
 
 export function saveSubmission(

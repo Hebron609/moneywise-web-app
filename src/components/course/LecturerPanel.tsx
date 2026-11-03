@@ -514,7 +514,7 @@ export function LecturerPanel({
                       type="text"
                       value={newFullName}
                       onChange={(e) => setNewFullName(e.target.value)}
-                      placeholder="e.g. Dr. K. Augustine (Lecturer)"
+                      placeholder="e.g. Charity Adjei (Course Lecturer)"
                       required
                       className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm"
                     />

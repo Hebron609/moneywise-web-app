@@ -9,3 +9,4 @@ tsconfig.tsbuildinfo
 # Local browser test output
 playwright-report/
 test-results/
+~$*

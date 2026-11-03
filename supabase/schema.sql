@@ -193,7 +193,7 @@ insert into public.forum_threads (id, author_id, author_name, author_role, title
 values (
   'a0000000-0000-0000-0000-000000000001',
   '00000000-0000-0000-0000-000000000000',
-  'Augustine K. (Course Facilitator)',
+  'Charity Adjei (Course Lecturer)',
   'LECTURER',
   'Welcome to Week 3: Pause Before You Pay Discussion',
   'Choose a fictional scam example from the lesson. In 2–3 sentences, explain one critical warning sign and the safe next step. Remember: never share real phone numbers or PINs in this forum.',

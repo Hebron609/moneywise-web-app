@@ -29,7 +29,7 @@ A dedicated Next.js web application replacing the Moodle course for **MoneyWise 
    - **Staff & Admin Logins (`/login`)**:
      - Pre-configured demo logins:
        - **Student**: `student@moneywise.org` (Addo Mensah)
-       - **Lecturer**: `lecturer@moneywise.org` (Augustine K. - Facilitator)
+       - **Lecturer**: `lecturer@moneywise.org` (Charity Adjei - Course Lecturer)
        - **Administrator**: `admin@moneywise.org` (Israel Ayiku - Project Lead)
    - **Staff Management Console**: When logged in as Administrator, you can create new accounts and select their role (**Lecturer / Teacher**, **Administrator**, or **Student**).
    - **Lecturer Academic Toolbar**: Toggle into Staff Mode to view the **Class Gradebook** (10/10 practice scores, 5/5 scam mastery) and evaluate submissions with rubrics and feedback.

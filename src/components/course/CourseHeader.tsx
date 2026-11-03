@@ -29,6 +29,7 @@ import {
 
 interface CourseHeaderProps {
   currentUser: {
+    id?: string;
     fullName: string;
     email: string;
     role: string;
@@ -82,6 +83,16 @@ export function CourseHeader({
   const isStaff = currentUser?.role === "LECTURER" || currentUser?.role === "ADMIN";
 
   const closeMenu = () => setMobileMenuOpen(false);
+
+  // Sanitize displayed name to prevent any lingering legacy cache strings
+  const displayName =
+    currentUser?.id === "usr-lecturer-1" ||
+    currentUser?.email === "lecturer@moneywise.org" ||
+    currentUser?.fullName?.includes("Augustine")
+      ? "Charity Adjei (Course Lecturer)"
+      : currentUser?.fullName?.includes("Osei")
+        ? "Millicent Kumado"
+        : currentUser?.fullName || "";
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
@@ -166,7 +177,7 @@ export function CourseHeader({
               <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
                 <div className="text-right">
                   <span className="text-xs font-bold text-slate-900 block leading-tight">
-                    {currentUser.fullName}
+                    {displayName}
                   </span>
                   <span
                     className={`inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 rounded ${
@@ -253,11 +264,11 @@ export function CourseHeader({
                             : "bg-emerald-600 text-white"
                       }`}
                     >
-                      {currentUser.fullName.charAt(0)}
+                      {displayName.charAt(0)}
                     </div>
                     <div>
                       <div className="text-xs font-bold text-slate-900">
-                        {currentUser.fullName}
+                        {displayName}
                       </div>
                       <div className="text-[11px] text-slate-500">
                         {currentUser.email}

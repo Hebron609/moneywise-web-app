@@ -112,7 +112,7 @@ export function CourseSectionsView({
                 Have questions or need assistance during practice? Post in the <strong>Course Help Forum</strong> or consult your teacher during supervised classroom periods.
               </p>
               <div className="pt-2 text-xs text-slate-500 border-t border-slate-200">
-                <strong>Facilitator:</strong> Augustine K. / Israel A. (Response target: within 24 hours).
+                <strong>Lecturer / Facilitator:</strong> Charity Adjei / Israel A. (Response target: within 24 hours).
               </div>
             </div>
           </div>
